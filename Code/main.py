@@ -52,7 +52,7 @@ class Customer:
             self.payment_type = 'cash'
         elif payment_type == 1:
             self.payment_type = 'credit card'
-        self.wait =wait_time
+        self.wait_time =wait_time
         self.service_time = service_time
 
     def get_arrival_time(self):
@@ -67,13 +67,16 @@ class Customer:
         return self.drop_time
     def get_number_items(self):
         return self.number_items
+    def get_payment_type(self):
+        return self.payment_type
+    def get_wait_time(self):
+        return self.wait_time
+    def get_service_time(self):
+        return self.service_time
 
 
 datalist=read_from_file("Data/Express.csv")
 cust = datalist[1].get_arrival_time()
 
 struct_time = time.strptime(cust,"%H:%M:%S")
-
 print(struct_time)
-
-# print(struct_time)
