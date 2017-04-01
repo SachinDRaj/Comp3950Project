@@ -10,16 +10,14 @@ def get_from_string(contents):
     datalist = []
     all_lines = contents.split('\n')
     for line in all_lines:
-        split = line.strip().split(',')
-        arrival_time = split[0].strip(',')
-        service_start = split[1].strip(',')
-        service_end = split[2].strip(',')
-        drop_time = split[3].strip(',')
-        n_items = split[4].strip(',')
-        payment_type = split[5].strip(',')
-        wait_time = split[6].strip(',')
-        service_time = split[7].strip(',')
-        # w = float(split[2].strip())
+        arrival_time = line[0].strip(',')
+        service_start = line[1].strip(',')
+        service_end = line[2].strip(',')
+        drop_time = line[3].strip(',')
+        n_items = line[4].strip(',')
+        payment_type = line[5].strip(',')
+        wait_time = line[6].strip(',')
+        service_time = line[7].strip(',')
         datalist.append(Customer(arrival_time,service_start,service_end,drop_time,n_items,payment_type,wait_time,service_time))
     return datalist
 
@@ -52,3 +50,5 @@ class Customer:
 			self.payment_type = 'credit card'
 		self.wait =wait_time
 		self.service_time = service_time
+
+read_from_file("Data/Express.csv")
