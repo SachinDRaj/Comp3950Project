@@ -59,11 +59,21 @@ class Customer:
         return self.arrival_time
     def get_customer_no(self):
         return self.customer_no
-        
+    def get_service_start_time(self):
+        return self.service_start_time
+    def get_service_end_time(self):
+        return self.service_end_time
+    def get_drop_time(self):
+        return self.drop_time
+    def get_number_items(self):
+        return self.number_items
+
 
 datalist=read_from_file("Data/Express.csv")
 cust = datalist[1].get_arrival_time()
-print(cust)
-# struct_time = time.strptime("%H:%M:%S)
+
+struct_time = time.strptime(cust,"%H:%M:%S")
+
+print(struct_time)
 
 # print(struct_time)
