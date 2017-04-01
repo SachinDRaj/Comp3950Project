@@ -11,9 +11,15 @@ def get_from_string(contents):
     all_lines = contents.split('\n')
     for line in all_lines:
         split = line.strip().split()
-        u = split[0].strip()
-        v = split[1].strip()
-        w = float(split[2].strip())
+        arrival_time = split[0].strip()
+        service_start = split[1].strip()
+        service_end = split[2].strip()
+        drop_time = split[3].strip()
+        items = split[4].strip()
+        card = split[5].strip()
+        wait_time = split[6].strip()
+        service_time = split[7].strip()
+        # w = float(split[2].strip())
         datalist.append((u, v, w))
     return datalist
 
@@ -32,7 +38,7 @@ class Queue:
 
     def size(self):
         return len(self.items)
-    
+
 class Customer:
 	def __init__(self, arrival_time, service_start_time, service_end_time, drop_time, number_items, payment_type, wait_time, service_time):
 		self.arrival_time = arrival_time
