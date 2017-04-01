@@ -1,6 +1,5 @@
 import numpy
 
-
 def read_from_file(filepath):
     in_file = open(filepath,'r')
     contents = in_file.read()
@@ -16,3 +15,19 @@ def get_from_string(contents):
         u = split[0].strip()
         edgelist.append(u)
     return edgelist
+
+class Queue:
+    def __init__(self):
+        self.items = []
+
+    def isEmpty(self):
+        return self.items == []
+
+    def enqueue(self, item):
+        self.items.insert(0,item)
+
+    def dequeue(self):
+        return self.items.pop()
+
+    def size(self):
+        return len(self.items)
