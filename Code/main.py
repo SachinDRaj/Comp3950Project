@@ -10,17 +10,17 @@ def get_from_string(contents):
     datalist = []
     all_lines = contents.split('\n')
     for line in all_lines:
-        split = line.strip().split()
-        arrival_time = split[0].strip()
-        service_start = split[1].strip()
-        service_end = split[2].strip()
-        drop_time = split[3].strip()
-        items = split[4].strip()
-        card = split[5].strip()
-        wait_time = split[6].strip()
-        service_time = split[7].strip()
+        split = line.strip().split(',')
+        arrival_time = split[0].strip(',')
+        service_start = split[1].strip(',')
+        service_end = split[2].strip(',')
+        drop_time = split[3].strip(',')
+        n_items = split[4].strip(',')
+        payment_type = split[5].strip(',')
+        wait_time = split[6].strip(',')
+        service_time = split[7].strip(',')
         # w = float(split[2].strip())
-        datalist.append((u, v, w))
+        datalist.append(Customer(arrival_time,service_start,service_end,drop_time,n_items,payment_type,wait_time,service_time))
     return datalist
 
 class Queue:
