@@ -6,15 +6,16 @@ def read_from_file(filepath):
     in_file.close()
     return get_from_string(contents)
 
-
 def get_from_string(contents):
-    edgelist = []
-    as_lines = contents.split('\n')
-    for line in as_lines:
+    datalist = []
+    all_lines = contents.split('\n')
+    for line in all_lines:
         split = line.strip().split()
         u = split[0].strip()
-        edgelist.append(u)
-    return edgelist
+        v = split[1].strip()
+        w = float(split[2].strip())
+        datalist.append((u, v, w))
+    return datalist
 
 class Queue:
     def __init__(self):
