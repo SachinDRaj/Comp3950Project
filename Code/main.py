@@ -32,3 +32,11 @@ class Queue:
 
     def size(self):
         return len(self.items)
+    
+class Customer:
+	def __init__(self, arrival_time, service_start_time, service_end_time):
+		self.arrival_time = arrival_time
+		self.service_start_time = service_start_time
+		self.service_end_time = service_end_time
+		self.service_time = self.service_end_time-self.service_start_time
+		self.wait = self.service_start_time-self.arrival_time
