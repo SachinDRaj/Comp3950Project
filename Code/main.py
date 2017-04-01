@@ -34,9 +34,15 @@ class Queue:
         return len(self.items)
     
 class Customer:
-	def __init__(self, arrival_time, service_start_time, service_end_time):
+	def __init__(self, arrival_time, service_start_time, service_end_time, drop_time, number_items, payment_type, wait_time, service_time):
 		self.arrival_time = arrival_time
 		self.service_start_time = service_start_time
 		self.service_end_time = service_end_time
-		self.service_time = self.service_end_time-self.service_start_time
-		self.wait = self.service_start_time-self.arrival_time
+		self.drop_time = drop_time
+		self.number_items = number_items
+		if payment_type == 0:
+			self.payment_type = 'cash'
+		elif payment_type == 1:
+			self.payment_type = 'credit card'
+		self.wait =wait_time
+		self.service_time = service_time
