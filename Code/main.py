@@ -74,9 +74,22 @@ class Customer:
     def get_service_time(self):
         return self.service_time
 
+def main():
+    datalist = read_from_file("Data/Express.csv")
+    expressLane = datalist
+    datalist = read_from_file("Data/KerschelJonathan.csv")
+    lane1 = datalist
+    datalist = read_from_file("Data/KerschelSanjay.csv")
+    lane2 = datalist
+    datalist = read_from_file("Data/RondellGerard.csv")
+    lane3 = datalist
+    datalist = read_from_file("Data/SachinJonathan.csv")
+    lane4 = datalist
+    datalist = read_from_file("Data/SachinSanjay.csv")
+    lane5 = datalist
+    cust = lane5[1].get_arrival_time()
+    struct_time = time.strptime(cust,"%H:%M:%S")
+    print(struct_time)
 
-datalist=read_from_file("Data/Express.csv")
-cust = datalist[1].get_arrival_time()
+main()
 
-struct_time = time.strptime(cust,"%H:%M:%S")
-print(struct_time)
