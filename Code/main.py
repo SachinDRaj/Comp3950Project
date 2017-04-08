@@ -1,4 +1,5 @@
-import numpy
+import numpy as np
+import datetime
 import time
 
 def read_from_file(filepath):
@@ -74,6 +75,63 @@ class Customer:
     def get_service_time(self):
         return self.service_time
 
+def findAvgArrivalTime(lane):
+    flag = 0
+    elems = []
+    t1 = 0
+    for i in lane:
+        if not(flag==0):
+            t = i.get_arrival_time()
+            t2 = t1
+            t1 = datetime.datetime.strptime(t,"%H:%M:%S")
+        if flag>1:
+            t3 = t1 - t2
+            # print(t3)
+            elems.append(t3.seconds)
+        flag+=1
+
+        m = np.mean(elems)
+    return m
+
+def findAvgServiceTime(lane):
+    flag = 0
+    elems = []
+    t1 = 0
+    for i in lane:
+        if not(flag==0):
+            t = i.get_service_time()
+            if not(t=='0'):
+                t1 = time.strptime(t,"%M:%S")
+                t1 = t1.tm_min*60 + t1.tm_sec
+                elems.append(t1)
+        flag+=1
+    m = np.mean(elems)
+    # print(elems)
+    return m
+
+def findArrivalRate(lane):
+    n = len(lane)
+    # time = lane[1].get_arrival_time()
+    # time2 = lane[n-1].get_arrival_time()
+    # print(time)
+    # print(time2)
+    # time = datetime.datetime.strptime(time,"%H:%M:%S")
+    # time2 = datetime.datetime.strptime(time2,"%H:%M:%S")
+    # time3 = time2 - time
+    # time3 = time3.seconds
+    # print(time3)
+    rate = n/30
+    return rate
+
+
+def findServiceRate(lane):
+    m = findAvgServiceTime(lane)
+    n = len(lane)
+    n -= 1
+    rate = 1/(m/n)
+    return rate
+
+
 def main():
     datalist = read_from_file("Data/Express.csv")
     expressLane = datalist
@@ -87,9 +145,12 @@ def main():
     lane4 = datalist
     datalist = read_from_file("Data/SachinSanjay.csv")
     lane5 = datalist
-    cust = lane5[1].get_arrival_time()
-    struct_time = time.strptime(cust,"%H:%M:%S")
-    print(struct_time)
+
+    # m = findAvgArrivalTime(lane1)
+    # m1 = findAvgServiceTime(lane1)
+    # rate = findArrivalRate(lane1)
+    rate = findServiceRate(lane1)
+    print(rate)
 
 main()
 
