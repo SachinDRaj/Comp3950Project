@@ -120,7 +120,7 @@ def findArrivalRate(lane):
     # time3 = time2 - time
     # time3 = time3.seconds
     # print(time3)
-    rate = n/30
+    rate = n/30 # arrival rate / length of people in queue divide total time in queue
     return rate
 
 
