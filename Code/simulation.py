@@ -3,12 +3,12 @@ import csv
 
 #define a class called 'Customer'
 class Customer:
-    def __init__(self,arrival_date,service_start_date,service_time):
-        self.arrival_date=arrival_date
-        self.service_start_date=service_start_date
+    def __init__(self,arrival_time,service_start_time,service_time):
+        self.arrival_time=arrival_time
+        self.service_start_time=service_start_time
         self.service_time=service_time
-        self.service_end_date=self.service_start_date+self.service_time
-        self.wait=self.service_start_date-self.arrival_date
+        self.service_end_time=self.service_start_time+self.service_time
+        self.wait=self.service_start_time-self.arrival_time
 
 #a simple function to sample from negative exponential
 def neg_exp(lambd):
@@ -22,9 +22,9 @@ def QSim(lambd=False,mu=False,simulation_time=False):
 
     #If parameters are not input prompt
     if not lambd:
-        lambd=input('Inter arrival rate: ')
+        lambd=int(input('Inter arrival rate: '))
     if not mu:
-        mu=input('Service rate: ')
+        mu=int(input('Service rate: '))
     if not simulation_time:
         simulation_time=int(input('Total simulation time: '))
 
@@ -40,18 +40,18 @@ def QSim(lambd=False,mu=False,simulation_time=False):
 
         #calculate arrival date and service time for new customer
         if len(Customers)==0:
-            arrival_date=neg_exp(lambd)
-            service_start_date=arrival_date
+            arrival_time=neg_exp(lambd)
+            service_start_time=arrival_time
         else:
-            arrival_date+=neg_exp(lambd)
-            service_start_date=max(arrival_date,Customers[-1].service_end_date)
+            arrival_time+=neg_exp(lambd)
+            service_start_time=max(arrival_time,Customers[-1].service_end_time)
         service_time=neg_exp(mu)
 
         #create new customer
-        Customers.append(Customer(arrival_date,service_start_date,service_time))
+        Customers.append(Customer(arrival_time,service_start_time,service_time))
 
         #increment clock till next end of service
-        t=arrival_date
+        t=arrival_time
 #----------------------------------
     
     #calculate summary statistics
@@ -89,11 +89,11 @@ def QSim(lambd=False,mu=False,simulation_time=False):
             # i=i+1
             # outrow=[]
             # outrow.append(i)
-            # outrow.append(customer.arrival_date)
+            # outrow.append(customer.arrival_time)
             # outrow.append(customer.wait)
-            # outrow.append(customer.service_start_date)
+            # outrow.append(customer.service_start_time)
             # outrow.append(customer.service_time)
-            # outrow.append(customer.service_end_date)
+            # outrow.append(customer.service_end_time)
             # output.writerow(outrow)
         # outfile.close()
     # print ("")
