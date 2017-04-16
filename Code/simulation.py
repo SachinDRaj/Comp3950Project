@@ -1,6 +1,7 @@
 import random
 import csv
 
+
 #define a class called 'Customer'
 class Customer:
     def __init__(self,arrival_time,service_start_time,service_time):
@@ -64,7 +65,12 @@ def QSim(lambd=False,mu=False,simulation_time=False):
     Service_Times=[a.service_time for a in Customers]
     Mean_Service_Time=sum(Service_Times)/len(Service_Times)
 
+    #print(Service_Times)
+    
     Utilisation=sum(Service_Times)/t #P
+    
+    Service_Wait=[a.wait for a in Customers]
+    Queue_Length=sum(Service_Wait)/t 
     
     
 
@@ -77,6 +83,7 @@ def QSim(lambd=False,mu=False,simulation_time=False):
     print ("Mean Wait: ",Mean_Wait)
     print ("Mean Time in System: ",Mean_Time)
     print ("Utilisation: ",Utilisation)
+    print ("Queue_Length: ",Queue_Length)
     print ("")
     
     #prompt user to output full data set to csv
