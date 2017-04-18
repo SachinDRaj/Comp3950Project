@@ -1,3 +1,13 @@
+"""
+each minute a server is idle costs us  $15
+each minute a customer waits for a server costs us $20
+"""
+"""
+Total cost of idle server per minute = (100- utilization ) * #2
+Total cost of customer waiting per minute = Lq * 100 * #2
+Add both cost
+"""
+
 import random
 import csv
 import numpy as np
@@ -33,12 +43,10 @@ def QSim(lambd,mu,servers,simulation_time):
     #Initialise empty list to hold all data
     Customers=defaultdict(list)
 
-    #randomly choose a server to go to
-
-
 #----------------------------------
 #The actual simulation happens here:
     while t<simulation_time:
+        #randomly choose a server to go to
         choice=sample_disc_uniform(0,servers)
 
         #calculate arrival date and service time for new customer
@@ -54,11 +62,7 @@ def QSim(lambd,mu,servers,simulation_time):
 
         #create new customer
         Customers[str(choice)].append(Customer(arrival_time,service_start_time,service_time))
-"""
-        for i in range(servers):
-            print(Customers[str(i)])
-        print("*******")
-"""
+
         #increment clock till next end of service
         t=arrival_time
 #----------------------------------

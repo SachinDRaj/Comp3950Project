@@ -1,0 +1,5 @@
+complete
+  choice of which server the customer chooses
+  cost estimation and returning cost
+  entire grocery simulation based on varying server sizes
+  find minimum cost of the servers, to choose the best amount of servers needed
