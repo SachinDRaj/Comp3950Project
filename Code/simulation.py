@@ -54,7 +54,7 @@ def QSim(lambd=False,mu=False,simulation_time=False):
         #increment clock till next end of service
         t=arrival_time
 #----------------------------------
-    
+
     #calculate summary statistics
     Waits=[a.wait for a in Customers]
     Mean_Wait=sum(Waits)/len(Waits) #W
@@ -66,13 +66,13 @@ def QSim(lambd=False,mu=False,simulation_time=False):
     Mean_Service_Time=sum(Service_Times)/len(Service_Times)
 
     #print(Service_Times)
-    
+
     Utilisation=sum(Service_Times)/t #P
-    
+
     Service_Wait=[a.wait for a in Customers]
-    Queue_Length=sum(Service_Wait)/t 
-    
-    
+    Queue_Length=sum(Service_Wait)/t
+
+
 
     #output summary statistics to screen
     print ("")
@@ -85,9 +85,9 @@ def QSim(lambd=False,mu=False,simulation_time=False):
     print ("Utilisation: ",Utilisation)
     print ("Queue_Length: ",Queue_Length)
     print ("")
-    
+
     #prompt user to output full data set to csv
-    # if input("Output data to csv (True/False)? ")=="True":
+    # if input("Output data to csv  (True/False)? ")=="True":
         # outfile=open('MM1Q-output-(%s,%s,%s).csv' %(lambd,mu,simulation_time),'wb')
         # output=csv.writer(outfile)
         # output.writerow(['Customer','Arrival_Date','Wait','Service_Start_Date','Service_Time','Service_End_Date'])
@@ -105,5 +105,7 @@ def QSim(lambd=False,mu=False,simulation_time=False):
         # outfile.close()
     # print ("")
     return
-    
+
+
+
 QSim()

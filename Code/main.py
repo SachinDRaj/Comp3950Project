@@ -90,7 +90,7 @@ def findAvgArrivalTime(lane):
             elems.append(t3.seconds)
         flag+=1
 
-        m = np.mean(elems)
+    m = np.mean(elems)
     return m
 
 def findAvgServiceTime(lane):
@@ -146,10 +146,13 @@ def main():
     datalist = read_from_file("Data/SachinSanjay.csv")
     lane5 = datalist
 
-    # m = findAvgArrivalTime(lane1)
-    # m1 = findAvgServiceTime(lane1)
-    # rate = findArrivalRate(lane1)
-    rate = findServiceRate(lane1)
+    m = findAvgArrivalTime(lane1)
+    print(m)
+    m1 = findAvgServiceTime(lane2)
+    print(m1)
+    rate1 = findArrivalRate(lane4)
+    print(rate1)
+    rate = findServiceRate(lane4)
     print(rate)
 
 main()
