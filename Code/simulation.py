@@ -16,18 +16,18 @@ def neg_exp(lambd):
     return random.expovariate(lambd)
 
 
-def QSim(lambd=False,mu=False,simulation_time=False):
+def QSim(lambd,mu,simulation_time):
     """
     This is the main function to call to simulate an MM1 queue.
     """
 
     #If parameters are not input prompt
-    if not lambd:
-        lambd=int(input('Inter arrival rate: '))
-    if not mu:
-        mu=int(input('Service rate: '))
-    if not simulation_time:
-        simulation_time=int(input('Total simulation time: '))
+    # if not lambd:
+    #     lambd=int(input('Inter arrival rate: '))
+    # if not mu:
+    #     mu=int(input('Service rate: '))
+    # if not simulation_time:
+    #     simulation_time=int(input('Total simulation time: '))
 
     #Initialise clock
     t=0
@@ -107,5 +107,28 @@ def QSim(lambd=False,mu=False,simulation_time=False):
     return
 
 
+def simulateGrocery(nServers, eServers,simulation_time,lambd,mu):
 
-QSim()
+    for i in range(nServers):
+        QSim(lambd,mu,simulation_time)
+
+    for i in range(eServers):
+        QSim(lambd,mu,simulation_time)
+
+
+    return
+
+def simulateG():
+
+    total_time = 60
+    n = int(total_time/30);
+
+    lambd = 2
+    mu = 3
+    nServers = 5
+    eServers = 1
+
+    for i in range(n):
+        simulateGrocery(nServers,eServers,30,lambd,mu)
+
+simulateG()
