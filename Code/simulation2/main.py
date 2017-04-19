@@ -112,15 +112,7 @@ def findAvgServiceTime(lane):
 
 def findArrivalRate(lane):
     n = len(lane)
-    # time = lane[1].get_arrival_time()
-    # time2 = lane[n-1].get_arrival_time()
-    # print(time)
-    # print(time2)
-    # time = datetime.datetime.strptime(time,"%H:%M:%S")
-    # time2 = datetime.datetime.strptime(time2,"%H:%M:%S")
-    # time3 = time2 - time
-    # time3 = time3.seconds
-    # print(time3)
+
     rate = n/30 # arrival rate / length of people in queue divide total time in queue
     return rate
 
@@ -149,11 +141,6 @@ def main():
     datalist = read_from_file("Data/SachinSanjay.csv")
     lane.append(datalist)
 
-    # m = findAvgArrivalTime(lane1)
-    # print(m)
-    # m1 = findAvgServiceTime(lane5)
-    # print(m1)
-    #
 
     sumArrival=0
     sumService=0
