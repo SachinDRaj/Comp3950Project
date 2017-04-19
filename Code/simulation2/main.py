@@ -150,8 +150,10 @@ def main():
     arrival = findArrivalRate(lane[0])
     service = findServiceRate(lane[0])
 
+    print("MASSY STORE THAT WE SURVERYED",file=out_file)
+
     print ("Summary results of express lane:",file=out_file)
-    mmcSim.QSim(service,arrival,1,300,out_file)
+    express=mmcSim.QSim(service,arrival,1,300,out_file)
     print("",file=out_file)
 
     sumArrival=0
@@ -163,11 +165,18 @@ def main():
     avgArrival=sumArrival/len(lane)
     avgService=sumService/len(lane)
     print ("Summary results of general lanes (lanes: {}):".format(len(lane)-1),file=out_file)
-    mmcSim.QSim(avgService,avgArrival,len(lane),300,out_file)
+    general=mmcSim.QSim(avgService,avgArrival,len(lane),300,out_file)
+
 
     print("",file=out_file)
+
+    print("SIMULATION OF GROCERY TO FIND IDEAL NUMBER OF SERVERS",file=out_file)
+    grocerySim.mainSim(arrival,service,sumArrival,sumService,out_file)
+
     print("",file=out_file)
-    grocerySim.mainSim(out_file)
+    print("--ACTUAL GROCERY SUMMARY--",file=out_file)
+    print("Total costs from both express lanes and general lanes %.2f" % (express['totalCost'][0] + general['totalCost'][0]),file=out_file)
+    print("And the amount of servers were 6 (including 1 express lane)",file=out_file)
 
 main()
 

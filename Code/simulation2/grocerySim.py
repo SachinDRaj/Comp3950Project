@@ -4,16 +4,16 @@ import numpy as np
 
 # out_file = open('output.txt','a')
 
-def mainSim(out_file):
+def mainSim(arrivalExpress,serviceExpress,arrivalGeneral,serviceGeneral,out_file):
     #constants
     leastServers=10
     mostServers=20
 
     #chosen mu and lambd from grocery surverying on a the peak hrs in a specific day
-    muGeneral=10
-    lambdGeneral=20
-    muExpress=11
-    lambdExpress=20
+    muGeneral=serviceGeneral
+    lambdGeneral=arrivalGeneral
+    muExpress=serviceExpress
+    lambdExpress=arrivalExpress
 
     Customers=[]
     count=0
@@ -39,16 +39,16 @@ def mainSim(out_file):
     print("",file=out_file)
 
     #add the total cost of the express lane to the total cost of the accumulated general lanes
-
+    print("--SIMULATION SUMMARY--",file=out_file)
     count=0
     print("%s\t%s\t%s"%("ID","Servers","Cost ($)"),file=out_file)
     for i in range(leastServers,mostServers+1):
         count=count+1
-        print("%d\t%d\t%.2f" % (count,i,cost[count-1]),file=out_file)
+        print("%d\t%d\t\t%.2f" % (count,i,cost[count-1]),file=out_file)
 
     #find minimum cost of array
     minCost=np.amin(cost)
     minLoc=np.argmin(cost)
-    print("\nThe minimum cost for the given data is: $%.2f\nand the amount of servers were %d"%(minCost,leastServers+minLoc),file=out_file)
+    print("\nThe minimum cost from both express lanes and general lanes: $%.2f\nand the amount of servers were %d (including 1 express lane)"%(minCost,leastServers+minLoc),file=out_file)
 
     return
