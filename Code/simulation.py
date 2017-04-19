@@ -85,13 +85,13 @@ def simulateGrocery(nServers, eServers,simulation_time,lambd,mu):
 
     for i in range(nServers):
         print("")
-        print("nServers Summary Results for lane "+i+":")
+        print("Summary Results for lane", i)
         print("")
         QSim(lambd,mu,simulation_time)
 
     for i in range(eServers):
         print("")
-        print("eServers Summary Results for lane "+i+":")
+        print("Summary Results for lane", i)
         print("")
         QSim(lambd,mu,simulation_time)
 
