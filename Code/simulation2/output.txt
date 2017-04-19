@@ -1,180 +1,180 @@
 
 MASSY STORE THAT WE SURVERYED
 Summary results of express lane:
-	Number of customers:  198
-	Mean Service Time: 0.92
-	Mean Wait: 1.89
+	Number of customers:  188
+	Mean Service Time: 0.97
+	Mean Wait: 1.84
 	Mean Time in System: 2.81
 	Utilisation: 0.61
-	Queue_Length: 1.25
-	Waiting cost: $2492.68
-	Idle cost: $5.85
-	Total Cost: $2498.53
+	Queue_Length: 1.15
+	Waiting cost: $2293.03
+	Idle cost: $5.92
+	Total Cost: $2298.95
 
 Summary results of general lanes (lanes: 5):
-	Number of customers:  80
-	Mean Service Time: 1.71
-	Mean Wait: 1.94
-	Mean Time in System: 3.65
-	Utilisation: 0.47
-	Queue_Length: 0.12
-	Waiting cost: $233.74
-	Idle cost: $7.94
-	Total Cost: $241.68
+	Number of customers:  103
+	Mean Service Time: 1.53
+	Mean Wait: 3.88
+	Mean Time in System: 5.40
+	Utilisation: 0.53
+	Queue_Length: 0.23
+	Waiting cost: $465.08
+	Idle cost: $7.10
+	Total Cost: $472.18
 
 SIMULATION OF GROCERY TO FIND IDEAL NUMBER OF SERVERS
 Express Lane: 
-	Number of customers:  202
-	Mean Service Time: 0.89
-	Mean Wait: 1.79
-	Mean Time in System: 2.68
-	Utilisation: 0.59
-	Queue_Length: 1.18
-	Waiting cost: $2367.16
-	Idle cost: $6.20
-	Total Cost: $2373.36
+	Number of customers:  187
+	Mean Service Time: 0.94
+	Mean Wait: 1.35
+	Mean Time in System: 2.29
+	Utilisation: 0.58
+	Queue_Length: 0.84
+	Waiting cost: $1670.32
+	Idle cost: $6.27
+	Total Cost: $1676.60
 
 --General Lane Summary: --
 Amount of servers:  10
-	Number of customers:  445
-	Mean Service Time: 0.30
-	Mean Wait: 0.05
-	Mean Time in System: 0.35
-	Utilisation: 0.44
-	Queue_Length: 0.01
-	Waiting cost: $16.00
-	Idle cost: $8.34
-	Total Cost: $24.33
+	Number of customers:  452
+	Mean Service Time: 0.26
+	Mean Wait: 0.16
+	Mean Time in System: 0.42
+	Utilisation: 0.40
+	Queue_Length: 0.02
+	Waiting cost: $47.62
+	Idle cost: $9.07
+	Total Cost: $56.69
 
 Amount of servers:  11
-	Number of customers:  477
+	Number of customers:  479
 	Mean Service Time: 0.29
-	Mean Wait: 0.04
-	Mean Time in System: 0.33
-	Utilisation: 0.46
+	Mean Wait: 0.08
+	Mean Time in System: 0.37
+	Utilisation: 0.45
 	Queue_Length: 0.01
-	Waiting cost: $15.08
-	Idle cost: $8.13
-	Total Cost: $23.21
+	Waiting cost: $24.43
+	Idle cost: $8.22
+	Total Cost: $32.65
 
 Amount of servers:  12
-	Number of customers:  505
-	Mean Service Time: 0.31
+	Number of customers:  503
+	Mean Service Time: 0.30
 	Mean Wait: 0.06
-	Mean Time in System: 0.36
-	Utilisation: 0.51
+	Mean Time in System: 0.35
+	Utilisation: 0.49
 	Queue_Length: 0.01
-	Waiting cost: $15.82
-	Idle cost: $7.34
-	Total Cost: $23.16
+	Waiting cost: $17.00
+	Idle cost: $7.64
+	Total Cost: $24.64
 
 Amount of servers:  13
-	Number of customers:  479
-	Mean Service Time: 0.27
-	Mean Wait: 0.08
-	Mean Time in System: 0.35
-	Utilisation: 0.44
-	Queue_Length: 0.01
-	Waiting cost: $19.93
-	Idle cost: $8.44
-	Total Cost: $28.36
+	Number of customers:  460
+	Mean Service Time: 0.30
+	Mean Wait: 0.23
+	Mean Time in System: 0.53
+	Utilisation: 0.47
+	Queue_Length: 0.03
+	Waiting cost: $53.58
+	Idle cost: $7.96
+	Total Cost: $61.54
 
 Amount of servers:  14
-	Number of customers:  470
-	Mean Service Time: 0.29
-	Mean Wait: 0.11
-	Mean Time in System: 0.40
-	Utilisation: 0.46
-	Queue_Length: 0.01
-	Waiting cost: $25.59
-	Idle cost: $8.16
-	Total Cost: $33.75
+	Number of customers:  490
+	Mean Service Time: 0.27
+	Mean Wait: 0.55
+	Mean Time in System: 0.83
+	Utilisation: 0.45
+	Queue_Length: 0.07
+	Waiting cost: $131.06
+	Idle cost: $8.23
+	Total Cost: $139.29
 
 Amount of servers:  15
-	Number of customers:  468
-	Mean Service Time: 0.30
-	Mean Wait: 0.13
-	Mean Time in System: 0.44
-	Utilisation: 0.47
-	Queue_Length: 0.02
-	Waiting cost: $32.25
-	Idle cost: $7.92
-	Total Cost: $40.17
+	Number of customers:  474
+	Mean Service Time: 0.29
+	Mean Wait: 0.09
+	Mean Time in System: 0.38
+	Utilisation: 0.45
+	Queue_Length: 0.01
+	Waiting cost: $22.92
+	Idle cost: $8.21
+	Total Cost: $31.13
 
 Amount of servers:  16
-	Number of customers:  450
+	Number of customers:  508
 	Mean Service Time: 0.31
-	Mean Wait: 0.05
-	Mean Time in System: 0.36
-	Utilisation: 0.46
+	Mean Wait: 0.02
+	Mean Time in System: 0.33
+	Utilisation: 0.52
 	Queue_Length: 0.00
-	Waiting cost: $9.46
-	Idle cost: $8.09
-	Total Cost: $17.55
+	Waiting cost: $5.11
+	Idle cost: $7.23
+	Total Cost: $12.34
 
 Amount of servers:  17
-	Number of customers:  505
+	Number of customers:  518
 	Mean Service Time: 0.29
-	Mean Wait: 0.07
-	Mean Time in System: 0.36
+	Mean Wait: 1.14
+	Mean Time in System: 1.43
 	Utilisation: 0.49
-	Queue_Length: 0.01
-	Waiting cost: $16.05
-	Idle cost: $7.72
-	Total Cost: $23.77
+	Queue_Length: 0.12
+	Waiting cost: $237.32
+	Idle cost: $7.63
+	Total Cost: $244.96
 
 Amount of servers:  18
-	Number of customers:  476
-	Mean Service Time: 0.31
-	Mean Wait: 0.35
-	Mean Time in System: 0.66
-	Utilisation: 0.49
-	Queue_Length: 0.03
-	Waiting cost: $64.80
-	Idle cost: $7.72
-	Total Cost: $72.52
+	Number of customers:  471
+	Mean Service Time: 0.28
+	Mean Wait: 0.05
+	Mean Time in System: 0.33
+	Utilisation: 0.44
+	Queue_Length: 0.00
+	Waiting cost: $9.79
+	Idle cost: $8.36
+	Total Cost: $18.15
 
 Amount of servers:  19
-	Number of customers:  469
-	Mean Service Time: 0.30
-	Mean Wait: 0.10
-	Mean Time in System: 0.39
-	Utilisation: 0.47
-	Queue_Length: 0.01
-	Waiting cost: $16.41
-	Idle cost: $8.02
-	Total Cost: $24.44
+	Number of customers:  507
+	Mean Service Time: 0.32
+	Mean Wait: 0.80
+	Mean Time in System: 1.12
+	Utilisation: 0.54
+	Queue_Length: 0.08
+	Waiting cost: $150.27
+	Idle cost: $6.92
+	Total Cost: $157.19
 
 Amount of servers:  20
-	Number of customers:  526
-	Mean Service Time: 0.28
-	Mean Wait: 0.42
-	Mean Time in System: 0.70
-	Utilisation: 0.50
-	Queue_Length: 0.04
-	Waiting cost: $72.93
-	Idle cost: $7.57
-	Total Cost: $80.50
+	Number of customers:  511
+	Mean Service Time: 0.30
+	Mean Wait: 0.09
+	Mean Time in System: 0.39
+	Utilisation: 0.52
+	Queue_Length: 0.01
+	Waiting cost: $15.29
+	Idle cost: $7.26
+	Total Cost: $22.55
 
 
 **************************************************
 --SIMULATION SUMMARY--
 ID	Servers	Cost ($)
-1	10		2397.69
-2	11		2396.57
-3	12		2396.52
-4	13		2401.72
-5	14		2407.10
-6	15		2413.53
-7	16		2390.90
-8	17		2397.13
-9	18		2445.88
-10	19		2397.79
-11	20		2453.86
+1	10		1733.28
+2	11		1709.25
+3	12		1701.23
+4	13		1738.14
+5	14		1815.89
+6	15		1707.73
+7	16		1688.94
+8	17		1921.55
+9	18		1694.74
+10	19		1833.79
+11	20		1699.15
 
-The minimum cost from both express lanes and general lanes: $2390.90
+The minimum cost from both express lanes and general lanes: $1688.94
 and the amount of servers were 16 (including 1 express lane)
 
 --ACTUAL GROCERY SUMMARY--
-Total costs from both express lanes and general lanes 2740.21
+Total costs from both express lanes and general lanes 2771.12
 And the amount of servers were 6 (including 1 express lane)
