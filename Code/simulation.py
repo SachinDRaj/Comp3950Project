@@ -20,15 +20,7 @@ def QSim(lambd,mu,simulation_time):
     """
     This is the main function to call to simulate an MM1 queue.
     """
-
-    #If parameters are not input prompt
-    # if not lambd:
-    #     lambd=int(input('Inter arrival rate: '))
-    # if not mu:
-    #     mu=int(input('Service rate: '))
-    # if not simulation_time:
-    #     simulation_time=int(input('Total simulation time: '))
-
+    
     #Initialise clock
     t=0
 
@@ -86,24 +78,6 @@ def QSim(lambd,mu,simulation_time):
     print ("Queue_Length: ",Queue_Length)
     print ("")
 
-    #prompt user to output full data set to csv
-    # if input("Output data to csv  (True/False)? ")=="True":
-        # outfile=open('MM1Q-output-(%s,%s,%s).csv' %(lambd,mu,simulation_time),'wb')
-        # output=csv.writer(outfile)
-        # output.writerow(['Customer','Arrival_Date','Wait','Service_Start_Date','Service_Time','Service_End_Date'])
-        # i=0
-        # for customer in Customers:
-            # i=i+1
-            # outrow=[]
-            # outrow.append(i)
-            # outrow.append(customer.arrival_time)
-            # outrow.append(customer.wait)
-            # outrow.append(customer.service_start_time)
-            # outrow.append(customer.service_time)
-            # outrow.append(customer.service_end_time)
-            # output.writerow(outrow)
-        # outfile.close()
-    # print ("")
     return
 
 

@@ -137,5 +137,5 @@ def QSim(lambd,mu,servers,simulation_time):
     print ("")
 
     #return total cost
-    return
+    return 5
 
