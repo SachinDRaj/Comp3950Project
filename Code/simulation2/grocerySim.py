@@ -9,17 +9,24 @@ mostServers=20
 mu=10
 lambd=20
 
-cost=[]
-for i in range(leastServers,mostServers+1):
-    cost.append(mmcSim.QSim(mu,lambd,i,300))
-
+Customers=[]
 count=0
+for i in range(leastServers,mostServers+1):
+    count=count+1
+    print("Amount of servers: ",i)
+    Customers.append(mmcSim.QSim(mu,lambd,i,300))
+    print("")
+
+cost=[]
+for i in range(count):
+    cost.append(Customers[i]['totalCost'][0])
 
 print("")
 for i in range(50):
     print("*",end='')
 print("")
 
+count=0
 print("{}\t{}\t{}".format("ID","Servers","Cost ($)"))
 for i in range(leastServers,mostServers+1):
     count=count+1

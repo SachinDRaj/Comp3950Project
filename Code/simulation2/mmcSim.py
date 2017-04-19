@@ -125,7 +125,6 @@ def QSim(lambd,mu,servers,simulation_time):
 
 
     #output summary statistics to screen
-    print ("")
     print ("Summary results:")
     print ("\tNumber of customers: ",numCustomers)
     print ("\tMean Service Time: %.2f" % Mean_Service_Time)
@@ -141,6 +140,18 @@ def QSim(lambd,mu,servers,simulation_time):
     print("\tTotal Cost: $%.2f" % totalCost)
     #return total cost
 
-    return totalCost
+    customer=defaultdict(list)
+    customer['numCustomers'].append(numCustomers)
+    customer['Mean_Service_Time'].append(Mean_Service_Time)
+    customer['Mean_Wait'].append(Mean_Wait)
+    customer['Mean_Time'].append(Mean_Time)
+    customer['Utilisation'].append(Utilisation)
+    customer['Queue_Length'].append(Queue_Length)
+    customer['waitingCost'].append(waitingCost)
+    customer['idleCost'].append(idleCost)
+    customer['totalCost'].append(totalCost)
+
+    
+    return customer
 
 
