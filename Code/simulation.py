@@ -20,7 +20,7 @@ def QSim(lambd,mu,simulation_time):
     """
     This is the main function to call to simulate an MM1 queue.
     """
-    
+
     #Initialise clock
     t=0
 
@@ -68,38 +68,73 @@ def QSim(lambd,mu,simulation_time):
 
     #output summary statistics to screen
 
-    print ("Number of customers: ",len(Customers))
-    print ("Mean Service Time: ",Mean_Service_Time)
-    print ("Mean Wait: ",Mean_Wait)
-    print ("Mean Time in System: ",Mean_Time)
-    print ("Utilisation: ",Utilisation)
-    print ("Queue_Length: ",Queue_Length)
-    print ("")
+    print ("Summary results:")
+    print ("\tNumber of customers: ",len(Customers))
+    print ("\tMean Service Time: %.2f"% Mean_Service_Time)
+    print ("\tMean Wait: %.2f"%Mean_Wait)
+    print ("\tMean Time in System: %.2f"%Mean_Time)
+    print ("\tUtilisation: %.2f"%Utilisation)
+    print ("\tQueue_Length: %.2f"%Queue_Length)
 
-    return
+    idleCost = (1 - Utilisation) * 15
+    waitingCost = Queue_Length * 100 * 20
+    totalCost = idleCost+waitingCost
+    print("\tWaiting cost: $%.2f" % waitingCost)
+    print("\tIdle cost: $%.2f" % idleCost)
+    print("\tTotal Cost: $%.2f" % totalCost)
+
+    return len(Customers),Mean_Service_Time,Mean_Wait,Mean_Time,Utilisation,Queue_Length,idleCost,waitingCost,totalCost
 
 
 def simulateGrocery(nServers, eServers,simulation_time,lambd,mu):
+
+    nCus=0
+    Mean_Service_Time=0
+    Mean_Wait=0
+    Mean_Time=0
+    Utilisation=0
+    Queue_Length=0
 
     for i in range(nServers):
         print("")
         print("Summary Results for lane", i)
         print("")
-        QSim(lambd,mu,simulation_time)
+        nCus,Mean_Service_Time,Mean_Wait,Mean_Time,Utilisation,Queue_Length,idleCost,waitingCost,totalCost = QSim(lambd,mu,simulation_time)
+        nCus+=nCus
+        Mean_Service_Time+=Mean_Service_Time
+        Mean_Wait+=Mean_Wait
+        Mean_Time+=Mean_Time
+        Utilisation+=Utilisation
+        Queue_Length+=Queue_Length
+        idleCost+=idleCost
+        waitingCost+=waitingCost
+        totalCost+=totalCost
 
-    for i in range(eServers):
-        print("")
-        print("Summary Results for lane", i)
-        print("")
-        QSim(lambd,mu,simulation_time)
+    nCus=nCus/nServers
+    Mean_Service_Time=Mean_Service_Time/nServers
+    Mean_Wait=Mean_Wait/nServers
+    Mean_Time=Mean_Time/nServers
+    Utilisation=Utilisation/nServers
+    Queue_Length=Queue_Length/nServers
+    totalCost=totalCost/nServers
 
+    # for i in range(eServers):
+    #     print("")
+    #     print("Summary Results for express lane")
+    #     print("")
+    #     nCus,Mean_Service_Time,Mean_Wait,Mean_Time,Utilisation,Queue_Length = QSim(lambd,mu,simulation_time)
+    #     nCus+=nCus
+    #     Mean_Service_Time+=Mean_Service_Time
+    #     Mean_Wait+=Mean_Wait
+    #     Mean_Time+=Mean_Time
+    #     Utilisation+=Utilisation
+    #     Queue_Length+=Queue_Length
 
     return
 
 def simulateG():
 
-    total_time = 60
-    n = int(total_time/30);
+    n=1
 
     lambd = 2
     mu = 3

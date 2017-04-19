@@ -1,6 +1,7 @@
 import numpy as np
 import datetime
 import time
+import mmcSim
 
 def read_from_file(filepath):
     in_file = open(filepath,'r')
@@ -134,7 +135,7 @@ def findServiceRate(lane):
 
 def main():
     datalist = read_from_file("Data/Express.csv")
-    expressLane = datalist
+    lane0 = datalist
     datalist = read_from_file("Data/KerschelJonathan.csv")
     lane1 = datalist
     datalist = read_from_file("Data/KerschelSanjay.csv")
@@ -146,14 +147,19 @@ def main():
     datalist = read_from_file("Data/SachinSanjay.csv")
     lane5 = datalist
 
-    m = findAvgArrivalTime(lane1)
-    print(m)
-    m1 = findAvgServiceTime(lane2)
-    print(m1)
-    rate1 = findArrivalRate(lane4)
-    print(rate1)
-    rate = findServiceRate(lane4)
-    print(rate)
+    # m = findAvgArrivalTime(lane1)
+    # print(m)
+    # m1 = findAvgServiceTime(lane5)
+    # print(m1)
+    #
+
+
+    for i in range(6):
+        rate1 = findArrivalRate("lane"+str(i))
+        print(rate1)
+        rate = findServiceRate("lane"+str(i))
+        print(rate)
+
 
 main()
 
