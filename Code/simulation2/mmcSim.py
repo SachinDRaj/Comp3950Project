@@ -13,7 +13,7 @@ import csv
 import numpy as np
 from collections import defaultdict
 
-
+# out_file = open('output.txt','a')
 #define a class called 'Customer'
 class Customer:
     def __init__(self,arrival_time,service_start_time,service_time):
@@ -33,7 +33,7 @@ def sample_disc_uniform(a, b):
     distance = diff * u  # travel a fraction of that length
     return int((a + distance)) # go that far away from min value
 
-def QSim(lambd,mu,servers,simulation_time):
+def QSim(lambd,mu,servers,simulation_time,out_file):
     """
     This is the main function to call to simulate an MM1 queue.
     """
@@ -125,18 +125,18 @@ def QSim(lambd,mu,servers,simulation_time):
 
 
     #output summary statistics to screen
-    print ("\tNumber of customers: ",numCustomers)
-    print ("\tMean Service Time: %.2f" % Mean_Service_Time)
-    print ("\tMean Wait: %.2f" % Mean_Wait)
-    print ("\tMean Time in System: %.2f" % Mean_Time)
-    print ("\tUtilisation: %.2f" % Utilisation)
-    print ("\tQueue_Length: %.2f" % Queue_Length)
+    print ("\tNumber of customers: ",numCustomers,file=out_file)
+    print ("\tMean Service Time: %.2f" % Mean_Service_Time,file=out_file)
+    print ("\tMean Wait: %.2f" % Mean_Wait,file=out_file)
+    print ("\tMean Time in System: %.2f" % Mean_Time,file=out_file)
+    print ("\tUtilisation: %.2f" % Utilisation,file=out_file)
+    print ("\tQueue_Length: %.2f" % Queue_Length,file=out_file)
     idleCost = (1 - Utilisation) * 15
     waitingCost = Queue_Length * 100 * 20
-    print("\tWaiting cost: $%.2f" % waitingCost)
-    print("\tIdle cost: $%.2f" % idleCost)
+    print("\tWaiting cost: $%.2f" % waitingCost,file=out_file)
+    print("\tIdle cost: $%.2f" % idleCost,file=out_file)
     totalCost = idleCost+waitingCost
-    print("\tTotal Cost: $%.2f" % totalCost)
+    print("\tTotal Cost: $%.2f" % totalCost,file=out_file)
     #return total cost
 
     customer=defaultdict(list)

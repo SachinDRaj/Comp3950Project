@@ -2,6 +2,7 @@ import numpy as np
 import datetime
 import time
 import mmcSim
+import grocerySim
 
 def read_from_file(filepath):
     in_file = open(filepath,'r')
@@ -124,8 +125,13 @@ def findServiceRate(lane):
     rate = 1/(m/n)
     return rate
 
-
+out_file = open('output.txt','w')
 def main():
+
+
+
+
+    print("",file=out_file)
     lane=[]
 
     datalist = read_from_file("Data/Express.csv")
@@ -144,9 +150,9 @@ def main():
     arrival = findArrivalRate(lane[0])
     service = findServiceRate(lane[0])
 
-    print ("Summary results of express lane:")
-    mmcSim.QSim(service,arrival,1,300)
-
+    print ("Summary results of express lane:",file=out_file)
+    mmcSim.QSim(service,arrival,1,300,out_file)
+    print("",file=out_file)
 
     sumArrival=0
     sumService=0
@@ -156,8 +162,12 @@ def main():
 
     avgArrival=sumArrival/len(lane)
     avgService=sumService/len(lane)
-    print ("Summary results of general lanes (lanes: {}):".format(len(lane)-1))
-    mmcSim.QSim(avgService,avgArrival,len(lane),300)
+    print ("Summary results of general lanes (lanes: {}):".format(len(lane)-1),file=out_file)
+    mmcSim.QSim(avgService,avgArrival,len(lane),300,out_file)
+
+    print("",file=out_file)
+    print("",file=out_file)
+    grocerySim.mainSim(out_file)
 
 main()
 
