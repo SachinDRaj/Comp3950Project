@@ -134,18 +134,20 @@ def findServiceRate(lane):
 
 
 def main():
+    lane=[]
+
     datalist = read_from_file("Data/Express.csv")
-    lane0 = datalist
+    lane.append(datalist)
     datalist = read_from_file("Data/KerschelJonathan.csv")
-    lane1 = datalist
+    lane.append(datalist)
     datalist = read_from_file("Data/KerschelSanjay.csv")
-    lane2 = datalist
+    lane.append(datalist)
     datalist = read_from_file("Data/RondellGerard.csv")
-    lane3 = datalist
+    lane.append(datalist)
     datalist = read_from_file("Data/SachinJonathan.csv")
-    lane4 = datalist
+    lane.append(datalist)
     datalist = read_from_file("Data/SachinSanjay.csv")
-    lane5 = datalist
+    lane.append(datalist)
 
     # m = findAvgArrivalTime(lane1)
     # print(m)
@@ -153,13 +155,16 @@ def main():
     # print(m1)
     #
 
+    sumArrival=0
+    sumService=0
+    for i in range(len(lane)):
+        sumArrival += findArrivalRate(lane[i])
+        sumService += findServiceRate(lane[i])
 
-    for i in range(6):
-        rate1 = findArrivalRate("lane"+str(i))
-        print(rate1)
-        rate = findServiceRate("lane"+str(i))
-        print(rate)
+    avgArrival=sumArrival/len(lane)
+    avgService=sumService/len(lane)
 
+    mmcSim.QSim(avgService,avgArrival,len(lane),300)
 
 main()
 
