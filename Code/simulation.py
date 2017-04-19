@@ -67,9 +67,7 @@ def QSim(lambd,mu,simulation_time):
 
 
     #output summary statistics to screen
-    print ("")
-    print ("Summary results:")
-    print ("")
+
     print ("Number of customers: ",len(Customers))
     print ("Mean Service Time: ",Mean_Service_Time)
     print ("Mean Wait: ",Mean_Wait)
