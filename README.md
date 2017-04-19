@@ -1,17 +1,13 @@
 # Comp3950Project
 
-https://github.com/drvinceknight/Simulating_Queues/blob/master/graphicalMM1.py
+-To run the simulation, run the file named "main.py" in the folder "Code" using Python 3.6.
+-All data will be outputted in the same directory in a text file called "output.txt"
+-There is an example test case that was referenced in the write up also in that directory, under the name "bestrun.txt"
 
-https://www.tutorialspoint.com/python/time_strptime.htm
+Course: COMP3950 
+Project
 
-
-http://stackoverflow.com/questions/1750644/how-to-use-python-to-calculate-time
-from datetime import datetime
-
-# Parse the time strings
-t1 = datetime.strptime('01:12','%H:%M')
-t2 = datetime.strptime('18:59','%H:%M')
-
-# Do the math, the result is a timedelta object
-delta = (t2 - t1) / 12
-print(delta.seconds)
+Name                ID
+Sachin Rajkumar 	814001729
+Sanjay Dookhoo 	    814000842 
+Shanea Lewis		809000437
