@@ -136,6 +136,13 @@ def QSim(lambd,mu,servers,simulation_time):
     print ("Queue_Length: ",Queue_Length)
     print ("")
 
+    idleCost = (1 - Utilisation) * 15
+    waitingCost = Queue_Length * 100 * 20
+    print("Waiting cost: ",waitingCost)
+    print("Idle cost: ",idleCost)
+    totalCost = idleCost+waitingCost
+    print("Total Cost: ", totalCost)
+    print("{:.20f}".format(totalCost))
     #return total cost
-    return
+    return totalCost
 
