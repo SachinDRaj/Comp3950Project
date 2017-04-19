@@ -141,16 +141,22 @@ def main():
     datalist = read_from_file("Data/SachinSanjay.csv")
     lane.append(datalist)
 
+    arrival = findArrivalRate(lane[0])
+    service = findServiceRate(lane[0])
+
+    print ("Summary results of express lane:")
+    mmcSim.QSim(service,arrival,1,300)
+
 
     sumArrival=0
     sumService=0
-    for i in range(len(lane)):
+    for i in range(1,len(lane)):
         sumArrival += findArrivalRate(lane[i])
         sumService += findServiceRate(lane[i])
 
     avgArrival=sumArrival/len(lane)
     avgService=sumService/len(lane)
-
+    print ("Summary results of general lanes (lanes: {}):".format(len(lane)-1))
     mmcSim.QSim(avgService,avgArrival,len(lane),300)
 
 main()

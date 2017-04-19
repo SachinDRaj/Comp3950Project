@@ -6,25 +6,34 @@ leastServers=10
 mostServers=20
 
 #chosen mu and lambd from grocery surverying on a the peak hrs in a specific day
-mu=10
-lambd=20
+muGeneral=10
+lambdGeneral=20
+muExpress=11
+lambdExpress=20
 
 Customers=[]
 count=0
+
+print("Express Lane: ")
+expressData=mmcSim.QSim(muExpress,lambdExpress,1,300)
+
+print("--General Lane Summary: --")
 for i in range(leastServers,mostServers+1):
     count=count+1
     print("Amount of servers: ",i)
-    Customers.append(mmcSim.QSim(mu,lambd,i,300))
+    Customers.append(mmcSim.QSim(muGeneral,lambdGeneral,i,300))
     print("")
 
 cost=[]
 for i in range(count):
-    cost.append(Customers[i]['totalCost'][0])
+    cost.append(Customers[i]['totalCost'][0] + expressData['totalCost'][0])
 
 print("")
 for i in range(50):
     print("*",end='')
 print("")
+
+#add the total cost of the express lane to the total cost of the accumulated general lanes
 
 count=0
 print("%s\t%s\t%s"%("ID","Servers","Cost ($)"))

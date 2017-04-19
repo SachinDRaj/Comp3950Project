@@ -125,8 +125,6 @@ def QSim(lambd,mu,servers,simulation_time):
 
 
     #output summary statistics to screen
-    print ("Summary results:")
-
     print ("\tNumber of customers: ",numCustomers)
     print ("\tMean Service Time: %.2f" % Mean_Service_Time)
     print ("\tMean Wait: %.2f" % Mean_Wait)
