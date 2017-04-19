@@ -127,22 +127,18 @@ def QSim(lambd,mu,servers,simulation_time):
     #output summary statistics to screen
     print ("")
     print ("Summary results:")
-    print ("")
-    print ("Number of customers: ",numCustomers)
-    print ("Mean Service Time: ",Mean_Service_Time)
-    print ("Mean Wait: ",Mean_Wait)
-    print ("Mean Time in System: ",Mean_Time)
-    print ("Utilisation: ",Utilisation)
-    print ("Queue_Length: ",Queue_Length)
-    print ("")
-
+    print ("\tNumber of customers: ",numCustomers)
+    print ("\tMean Service Time: %.2f" % Mean_Service_Time)
+    print ("\tMean Wait: %.2f" % Mean_Wait)
+    print ("\tMean Time in System: %.2f" % Mean_Time)
+    print ("\tUtilisation: %.2f" % Utilisation)
+    print ("\tQueue_Length: %.2f" % Queue_Length)
     idleCost = (1 - Utilisation) * 15
     waitingCost = Queue_Length * 100 * 20
-    print("Waiting cost: ",waitingCost)
-    print("Idle cost: ",idleCost)
+    print("\tWaiting cost: $%.2f" % waitingCost)
+    print("\tIdle cost: $%.2f" % idleCost)
     totalCost = idleCost+waitingCost
-    print("Total Cost: ", totalCost)
-    print("{:.20f}".format(totalCost))
+    print("\tTotal Cost: $%.2f" % totalCost)
     #return total cost
 
     return totalCost
