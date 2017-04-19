@@ -27,14 +27,14 @@ for i in range(50):
 print("")
 
 count=0
-print("{}\t{}\t{}".format("ID","Servers","Cost ($)"))
+print("%s\t%s\t%s"%("ID","Servers","Cost ($)"))
 for i in range(leastServers,mostServers+1):
     count=count+1
-    print("{}\t{}\t{:.4}".format(count,i,cost[count-1]))
+    print("%d\t%d\t%.2f" % (count,i,cost[count-1]))
 
 #find minimum cost of array
 minCost=np.amin(cost)
 minLoc=np.argmin(cost)
-print("\nThe minimum cost for the given data is: ${:.4}\nand the amount of servers were {}".format(minCost,leastServers+minLoc))
+print("\nThe minimum cost for the given data is: $%.2f\nand the amount of servers were %d"%(minCost,leastServers+minLoc))
 
 
